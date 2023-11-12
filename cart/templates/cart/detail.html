@@ -1,0 +1,89 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+   {% trans "Your shopping cart" %}
+{% endblock %}
+{% block content %}
+    <h1>{% trans "Your shopping cart" %}</h1>
+    <table class="cart">
+        <thead>
+        <tr>
+            <th>{% trans "Image" %}</th>
+            <th>{% trans "Book and authors" %}</th>
+            <th>{% trans "Quantity" %}</th>
+            <th>{% trans "Remove" %}</th>
+            <th>{% trans "Unit price" %}</th>
+            <th>{% trans "Price" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cart %}
+            {% with book=item.book %}
+                <tr>
+                    <td>
+                        <a href="{{ book.get_absolute_url }}">
+                            <img src="
+                                {% if book.image %}
+                                    {{ book.image.url }}
+                                {% else %}
+                                    {% static "img/no_image.png" %}
+                                {% endif %}">
+                        </a>
+                    </td>
+                    <td>{{ book.name }}
+                    <p>{% for author in book.authors.all %}{{ author }} {% endfor %}</p></td>
+                    <td>
+                    <form action="{% url "cart:cart_add" book.id %}" method="post">
+                        {{ item.update_quantity_form.quantity }}
+                        {{ item.update_quantity_form.update }}
+                        <input type="submit" value="{% trans "Update" %}">
+                        {% csrf_token %}
+                    </form>
+                    </td>
+                    <td><a href="{% url "cart:cart_remove" book.id%}">{% trans "Remove" %}</a></td>
+                    <td>₴{{ item.price }}</td>
+                    <td>₴{{ item.total_price }}</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+
+        {% if cart.coupon %}
+            <tr class="subtotal">
+                <td>{% trans "Subtotal" %}</td>
+                <td colspan="4"></td>
+                <td class="num">₴{{ cart.get_total_price }}</td>
+            </tr>
+            <tr>
+                {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
+                    <td>"{{ code }}" coupon ({{ discount }}% off)</td>
+                {% endblocktrans %}
+                <td colspan="4"></td>
+                <td class="num neg">
+                    - ₴{{ cart.get_discount|floatformat:"2" }}
+                </td>
+            </tr>
+        {% endif %}
+        <tr class="total">
+            <td>{% trans "Total" %}</td>
+            <td colspan="4"></td>
+            <td class="num">
+                ₴{{ cart.get_total_price_after_discount|floatformat:"2" }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        {% trans "Apply a coupon" %}:
+    </p>
+    <form action="{% url "coupons:apply" %}" method="post">
+    {% csrf_token %}
+    {{ coupon_apply_form }}
+    <input type="submit" value="{% trans "Apply" %}">
+    </form>
+    <p class="text-right">
+        <a href="{% url "shop:book_list" %}" class="button light">{% trans "Continue shopping" %}</a>
+        <a href="{% url "orders:order_create" %}" class="button">{% trans "Checkout" %}</a>
+    </p>
+{% endblock %}

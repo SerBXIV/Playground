@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-13 15:54+0200\n"
+"PO-Revision-Date: 2022-11-13 16:13+0000\n"
+"Last-Translator:   <serb1406@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\BookShop\settings.py:125
+msgid "English"
+msgstr "Англійська"
+
+#: .\BookShop\settings.py:126
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: .\BookShop\urls.py:26
+msgid "^cart/"
+msgstr "^корзина/"
+
+#: .\BookShop\urls.py:27
+msgid "^orders/"
+msgstr "^замовлення/"
+
+#: .\BookShop\urls.py:28
+msgid "^coupons/"
+msgstr "^купони/"
+
+#: .\cart\forms.py:8 .\cart\templates\cart\detail.html:15
+msgid "Quantity"
+msgstr "Кількість"
+
+#: .\cart\templates\cart\detail.html:6 .\cart\templates\cart\detail.html:9
+msgid "Your shopping cart"
+msgstr "Ваша корзина"
+
+#: .\cart\templates\cart\detail.html:13
+msgid "Image"
+msgstr "Зображення"
+
+#: .\cart\templates\cart\detail.html:14
+msgid "Book and authors"
+msgstr "Книга та автори"
+
+#: .\cart\templates\cart\detail.html:16 .\cart\templates\cart\detail.html:45
+msgid "Remove"
+msgstr "Видалити"
+
+#: .\cart\templates\cart\detail.html:17
+msgid "Unit price"
+msgstr "Ціна за одиницю"
+
+#: .\cart\templates\cart\detail.html:18
+msgid "Price"
+msgstr "Ціна"
+
+#: .\cart\templates\cart\detail.html:41
+msgid "Update"
+msgstr "Оновити"
+
+#: .\cart\templates\cart\detail.html:54
+msgid "Subtotal"
+msgstr "Попередній розрахунок"
+
+#: .\cart\templates\cart\detail.html:59
+#, python-format
+msgid ""
+"\n"
+"                    <td>\"%(code)s\" coupon (%(discount)s%% off)</td>\n"
+"                "
+msgstr ""
+"\n"
+"<td>\"%(code)s\" купон (%(discount)s%% знижка)</td>"
+
+#: .\cart\templates\cart\detail.html:69
+#: .\orders\templates\orders\order\create.html:28
+msgid "Total"
+msgstr "Всього"
+
+#: .\cart\templates\cart\detail.html:78
+msgid "Apply a coupon"
+msgstr "Застосувати купон"
+
+#: .\cart\templates\cart\detail.html:83
+msgid "Apply"
+msgstr "Застосувати"
+
+#: .\cart\templates\cart\detail.html:86
+msgid "Continue shopping"
+msgstr "Продовжити покупки"
+
+#: .\cart\templates\cart\detail.html:87
+#: .\orders\templates\orders\order\create.html:5
+#: .\orders\templates\orders\order\create.html:9
+msgid "Checkout"
+msgstr "Розрахуватися"
+
+#: .\coupons\forms.py:6
+msgid "Coupon"
+msgstr "Купон"
+
+#: .\orders\models.py:10
+msgid "first name"
+msgstr "Ім'я"
+
+#: .\orders\models.py:11
+msgid "last name"
+msgstr "Прізвище"
+
+#: .\orders\models.py:12
+msgid "e-mail"
+msgstr "e-mail"
+
+#: .\orders\models.py:13
+msgid "address"
+msgstr "Адреса"
+
+#: .\orders\models.py:14
+msgid "postal code"
+msgstr "Поштовий індекс"
+
+#: .\orders\models.py:15
+msgid "city"
+msgstr "Місто"
+
+#: .\orders\templates\orders\order\create.html:11
+msgid "Your order"
+msgstr "Ваша корзина"
+
+#: .\orders\templates\orders\order\create.html:21
+#, python-format
+msgid ""
+"\n"
+"                        \"%(code)s\" (%(discount)s%% off)\n"
+"                    "
+msgstr ""
+"\n"
+"<td>\"%(code)\" купон (%(discount)%% знижка)</td>"
+
+#: .\orders\templates\orders\order\create.html:33
+msgid "Place order"
+msgstr "Розмістити замовлення"
+
+#: .\orders\templates\orders\order\created.html:4
+#: .\orders\templates\orders\order\created.html:7
+msgid "Thank you"
+msgstr "Дякуємо!"
+
+#: .\orders\templates\orders\order\created.html:8
+#, python-format
+msgid ""
+"\n"
+"        <p>Your order has been successfully completed. Your order number is <strong>%(order_id)s</strong>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"<p>Ваше замовлення успішно створене. Номер Вашого замовлення <strong>%(order_id)s</strong>.</p>"
+
+#: .\orders\urls.py:8
+#, fuzzy
+#| msgid "^cart/"
+msgid "^create/$"
+msgstr "^корзина/"
+
+#: .\shop\templates\shop\base.html:8 .\shop\templates\shop\base.html:14
+msgid "Book shop"
+msgstr "Книжковий магазин"
+
+#: .\shop\templates\shop\base.html:19
+msgid "Language"
+msgstr "Мова"
+
+#: .\shop\templates\shop\base.html:35
+msgid "Your cart"
+msgstr "Ваша корзина"
+
+#: .\shop\templates\shop\base.html:37
+#, python-format
+msgid ""
+"\n"
+"                        %(total_items)s item%(total_items_plural)s,\n"
+"                        ₴%(total_price)s\n"
+"                    "
+msgstr ""
+"\n"
+"%(total_items)s одиниць%(total_items_plural)s,\n"
+"₴%(total_price)s"
+
+#: .\shop\templates\shop\base.html:43
+msgid "Your cart is empty"
+msgstr "Ваша корзина порожня"
+
+#: .\shop\templates\shop\book\detail.html:5
+msgid "All books"
+msgstr "Всі книги"
+
+#: .\shop\templates\shop\book\detail.html:17
+msgid "Add to cart"
+msgstr "Додати до корзини"
+
+#: .\shop\templates\shop\book\list.html:5
+#: .\shop\templates\shop\book\list.html:22
+msgid "Books"
+msgstr "Книги"
+
+#: .\shop\templates\shop\book\list.html:9
+msgid "Genres"
+msgstr "Жанри"
+
+#: .\shop\templates\shop\book\list.html:12
+msgid "All"
+msgstr "Всі"
